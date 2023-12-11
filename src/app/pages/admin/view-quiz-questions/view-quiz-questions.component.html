@@ -1,0 +1,51 @@
+<h1 style="margin-top: 10px;">Questions of {{qTitle}}</h1>
+
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card *ngFor="let q of questions; let i = index" style="margin-bottom: 10px;">
+                <mat-card-content>
+                    <p>
+                        <b>{{i+1}} ) </b> <span [innerHTML]="q.content">{{q.content}}</span>
+                    </p>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>1)</b> {{q.option1}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>2)</b> {{q.option2}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>3)</b> {{q.option3}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>4)</b> {{q.option4}}</p>
+                            </div>
+                        </div> 
+                        <p style="margin-top: 10px;"><b>Correct Answer: {{q.answer}}</b></p>
+                    </div>
+                </mat-card-content>
+                <mat-divider style="width: 20%; margin-left: 10px;"></mat-divider>
+                <mat-card-actions>
+                    <!--<button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon" style="margin-left: 50%;">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="accent" class="ml20" [routerLink]="'/admin-dashboard/quiz/'">
+                        <mat-icon>update</mat-icon>
+                    </button>-->
+                    <button mat-button color="accent" (click)="deleteQuestion(q.questionId)">Delete</button>
+                    <button mat-button color="primary">Update</button>
+                </mat-card-actions>
+                <mat-divider></mat-divider>
+            </mat-card>
+
+            <div class="container text-center">
+                <button mat-raised-button  
+                    style="margin-bottom: 15px; margin-top: 10px; background-color: #1E90FF; color: white;" [routerLink]="'/admin-dashboard/add-question/'+qId+'/'+qTitle">Add Question
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

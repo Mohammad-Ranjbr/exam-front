@@ -1,0 +1,78 @@
+<div class="bootstrap_wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <h1 style="margin-top: 15px; margin-left: 10px;">Adding to {{qTitle}}</h1>
+
+                <mat-card-header>
+                    <mat-card-subtitle>
+                        Enter the detail of the new question
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <form style="margin-top: 20px;" (ngSubmit)="formSubmit()">
+                        <!-- <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Question content</mat-label>
+                            <textarea matInput placeholder="Write here" rows="5" [(ngModel)]="question.content" name="content"></textarea>
+                        </mat-form-field> -->
+
+                        <ckeditor [editor]="Editor"
+                        data="<h1>Question Content</h1>" name="content" [(ngModel)]="question.content">
+                        </ckeditor>
+
+                        <!-- Options -->
+
+                        <div class="row"style="margin-top: 20px;">
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>option1</mat-label>
+                                    <input type="text" matInput placeholder="Enter Option1" [(ngModel)]="question.option1" name="option1"/>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>option2</mat-label>
+                                    <input type="text" matInput placeholder="Enter Option2" [(ngModel)]="question.option2" name="option2"/>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>option3</mat-label>
+                                    <input type="text" matInput placeholder="Enter Option3" [(ngModel)]="question.option3" name="option3"/>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>option4</mat-label>
+                                    <input type="text" matInput placeholder="Enter Option4" [(ngModel)]="question.option4" name="option4"/>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <!-- Answer -->
+
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Select Answer</mat-label>
+                            <mat-select [(ngModel)]="question.answer" name="answer">
+                                    <mat-option *ngIf="question.option1" [value]="question.option1">{{question.option1}}</mat-option>
+                                    <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</mat-option>
+                                    <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</mat-option>
+                                    <mat-option *ngIf="question.option4" [value]="question.option4">{{question.option4}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center mt20">
+                            <button mat-raised-button 
+                            style="margin-bottom: 15px; margin-top: 10px; background-color: #1E90FF; color: white; width:150px;">Add
+                            </button>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

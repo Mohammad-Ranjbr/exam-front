@@ -1,0 +1,7 @@
+.button-margin{
+    margin-top: 10px;
+}
+.example-header-image {
+    background-image: url('../../../../assets/category-64-1.png');
+    background-size: cover;
+}

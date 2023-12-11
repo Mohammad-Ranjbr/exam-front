@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item [routerLink]="'/admin-dashboard'" class="button-margin">
+            <mat-icon mat-list-icon>home</mat-icon> Home
+        </button>
+        <button mat-list-item [routerLink]="'/admin-dashboard/profile'" class="button-margin">
+            <mat-icon mat-list-icon>account_circle</mat-icon>  Profile
+        </button>
+        <button mat-list-item [routerLink]="'/admin-dashboard/quizzes'" class="button-margin">
+            <mat-icon mat-list-icon>quiz</mat-icon>  Quizzes
+        </button>
+        <button mat-list-item [routerLink]="'/admin-dashboard/add-quiz'" class="button-margin">
+            <mat-icon mat-list-icon>add</mat-icon>  Add Quiz
+        </button>
+        <button mat-list-item [routerLink]="'/admin-dashboard/categories'" class="button-margin">
+            <mat-icon mat-list-icon>category</mat-icon>  Categories
+        </button>
+        <button mat-list-item [routerLink]="'/admin-dashboard/add-category'" class="button-margin" style="margin-bottom: 10px;">
+            <mat-icon mat-list-icon>add_box</mat-icon>  Add Category
+        </button>
+        <button mat-list-item [routerLink]="'/admin-dashboard/profile'" class="button-margin" style="margin-bottom: 10px;" (click)="logout()" *ngIf="isLoggedIn">
+            <mat-icon mat-list-icon>logout</mat-icon>  Logout
+        </button>
+    </mat-action-list> 
+</mat-card>

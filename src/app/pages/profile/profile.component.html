@@ -1,0 +1,48 @@
+<mat-card *ngIf="user">
+    <div style="margin-left: 15px ; margin-top: 15px;">
+        <div style="margin-top: 30px;" class="ml20">
+            <img src="../../../assets/mohammad.png" alt="Profile Picture" class="profile-image" />
+            <h1 class="mt20">{{ user.firstname }} {{user.lastname}}</h1>
+        </div>
+        <mat-card-content>
+            <div class="bootstrap-wrapper">
+                <div class="container">
+                    <div class="row" class="table-row">
+                        <div class="col-md-10 offset-md-1">
+                            <table class="table">
+                                <tr>
+                                    <td>User ID</td>
+                                    <td>{{ user.userId}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Role</td>
+                                    <td>{{ user.roles[0].role }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>{{ user.enabled ? "ACTIVE" : "NOT ACTIVE" }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Username</td>
+                                    <td>{{ user.username }}</td>
+                                </tr>
+                                <tr><!-- <tr *ngIf="user.phone"> -->
+                                    <td>Phone Number</td>
+                                    <td>{{ user.phone}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>{{ user.email }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions style="margin-left: 37%; margin-top: 10px;">
+            <button mat-raised-button style="background-color: #4E66EA; color: white;" class="mb20 button-size">Update</button>
+            <button mat-raised-button style="background-color: #FA558C; color: white;" class="ml20 mb20 button-size">Share</button>
+        </mat-card-actions>
+    </div>
+</mat-card>

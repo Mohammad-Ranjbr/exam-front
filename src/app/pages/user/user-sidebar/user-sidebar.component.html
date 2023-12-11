@@ -1,0 +1,17 @@
+<mat-card class="mt20">
+    <mat-action-list style="margin-bottom: 10px;">
+        <div style="font-size: 20px; font-weight: 500;">Categories</div>
+        <button mat-list-item [routerLink]="'/user-dashboard/0'" class="button-margin">
+            <p style="font-size: 18px; font-weight: 410; margin-top: 20px; margin-left: 25px;">All Quizzes</p>
+        </button>
+        <button [routerLink]="'/user-dashboard/'+c.id" mat-list-item *ngFor="let c of categories" class="button-margin">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title style="font-size: 13px; margin-top: 12px;">
+                    {{c.title}}
+                </mat-card-title>
+            </mat-card-header>
+        </button>
+    </mat-action-list>
+</mat-card>
+  
